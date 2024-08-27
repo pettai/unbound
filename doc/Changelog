@@ -1,3 +1,31 @@
+27 August 2024: Wouter
+	- Fix #1130: Loads of logs: "validation failure: key for validation
+	  <domain>. is marked as invalid because of a previous" for
+	  non-DNSSEC signed zone.
+
+23 August 2024: Wouter
+	- Merge patch to fix for glue that is outside of zone, with
+	  `harden-unverified-glue`, from Karthik Umashankar (Microsoft).
+	  Enabling this option protects the Unbound resolver against bad
+	  glue, that is unverified out of zone glue, by resolving them.
+	  It uses the records as last resort if there is no other working
+	  glue.
+	- Fix #1127: error: "memory exhausted" when defining more than 9994
+	  local-zones.
+	- Fix documentation for cache_fill_missing function.
+
+21 August 2024: Wouter
+	- Add cross platform freebsd, openbsd and netbsd to github ci.
+	- Fix for char signedness warnings on NetBSD.
+
+20 August 2024: Wouter
+	- Add iter-scrub-ns, iter-scrub-cname and max-global-quota
+	  configuration options.
+
+19 August 2024: Wouter
+	- Fix #1126: unbound-control-setup hangs while testing for openssl
+	  presence starting from version 1.21.0.
+
 9 August 2024: Wouter
 	- Fix spelling for the cache-min-negative-ttl entry in the
 	  example.conf.
